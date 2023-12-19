@@ -17,9 +17,9 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  text-align: center;
 }
 
 h1 {
@@ -54,6 +54,11 @@ iframe{
   width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+img#cat{
+  width: 50%;
+  height: 50%;
 }
 
 /*ESTILOS DE LA APLICACION:*/
