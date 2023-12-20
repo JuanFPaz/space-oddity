@@ -14,13 +14,27 @@ export default function sectionNasa () {
         if (data.code === 400) {
           throw Error(data.msg)
         }
-        const { title, date, hdurl, explanation } = data
-        document.querySelector('div.main section').innerHTML = `
-        <h1>${title}</h1>
-        <h2>${date}</h2>
-        <img src=${hdurl}>
-        <p>${explanation}</p>
-    `
+
+        if (data.media_type !== 'video') {
+          const { title, date, hdurl, explanation } = data
+          document.querySelector('div.main section').innerHTML = `
+          <h1>${title}</h1>
+          <h2>${date}</h2>
+          <img src=${hdurl}>
+          <p>${explanation}</p>
+          `
+        } else {
+          console.log(data)
+          const { title, date, url, explanation } = data
+          document.querySelector('div.main section').innerHTML = `
+          <h1>${title}</h1>
+          <h2>${date}</h2>
+          <p>${explanation}</p>
+          <div class="iframe-container">
+          <iframe src=${url}>
+          </div>
+          `
+        }
       })
       .catch((err) => {
         console.log(err)
