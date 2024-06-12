@@ -1,4 +1,4 @@
-import cat from './cat.jpg'
+import inputFecha from './inputFecha'
 
 const queryString = window.location.search
 // Crear un objeto URLSearchParams para manejar los parámetros
@@ -17,16 +17,37 @@ export default function sectionNasa () {
 
         if (data.media_type !== 'video') {
           const { title, date, hdurl, explanation } = data
-          document.querySelector('div.main section').innerHTML = `
-          <h1>${title}</h1>
-          <h2>${date}</h2>
-          <img src=${hdurl}>
-          <p>${explanation}</p>
+          document.querySelector('section').innerHTML = `
+          <div class='container-fluid'>
+            <div class="row justify-content-center">
+              <div class="col-8">
+                <article class="articleNasa">
+                        <div class='text-container'>
+                          <h1>${title}</h1>
+                          <h2>${date}</h2>
+                          <p>${explanation}</p>
+                        </div>
+                        <div class='img-contenedor d-flex flex-column justify-content-center '>
+                          <img class='rounded img-fluid' src=${hdurl}>
+                        </div>
+                </article>
+              </div>
+            </div>
+            <div class='container-fluid'>
+              <div class="row justify-content-center">
+                <div class="col-4">
+                  <article class="articleForm">
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
           `
+          inputFecha()
         } else {
           console.log(data)
           const { title, date, url, explanation } = data
-          document.querySelector('div.main section').innerHTML = `
+          document.querySelector('section').innerHTML = `
           <h1>${title}</h1>
           <h2>${date}</h2>
           <p>${explanation}</p>
@@ -38,14 +59,21 @@ export default function sectionNasa () {
       })
       .catch((err) => {
         console.log(err)
-        document.querySelector('div.main section').innerHTML = `
+        document.querySelector('section').innerHTML = `
         <h1>Error: ${err.message}</h1>
     `
       })
   } else {
-    document.querySelector('div.main section').innerHTML = `
-        <h1>Busca una Fecha en la barrita de busqueda, y mira la foto q sale :D</h1>
-        <img id=cat src=${cat}>
-        `
+    document.querySelector('section.section-form').innerHTML = `
+    <div class='container-fluid'>
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <article class="articleForm">
+          </article>
+        </div>
+      </div>
+    </div>
+      `
+    inputFecha()
   }
 }

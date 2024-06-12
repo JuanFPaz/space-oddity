@@ -1,20 +1,29 @@
 export default function inputFecha () {
-  document.querySelector('div.main header').innerHTML = `
-    <form>
-        <label class="form-date__label" for="input-date" >Buscar Por fecha:
-        <input
-        class="form-date__input"
-        type="date"
-        id="input-date"
-        name="date"
-        min="1996-06-16" 
-        max=""
-        required
-        />
+  document.querySelector('article.articleForm').innerHTML = `
+  <form class="row row-cols-lg-auto g-3 align-items-center">
+    <div class="col-12">
+        <label for="input-date" >
+          Buscar Por fecha:
         </label>
+        <div class="input-group">
+          <input
+          class="form-control" id="input-date" aria-describedby="emailHelp"
+          type="date"
+          name="date"
+          min="1996-06-16" 
+          max=""
+          required
+          />    
+        </div>
 
-        <button type="submit">Buscar</button>
-  </form>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+  <form>
+</form>
       `
 
   actualizarFechaMax()
