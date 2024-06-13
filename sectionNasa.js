@@ -19,28 +19,35 @@ export default function sectionNasa () {
 
         if (data.media_type !== 'video') {
           const { title, date, hdurl, explanation } = data
+          console.log(data)
           document.querySelector('section').innerHTML = `
-          <div class='container-fluid div-form'>
-              <div class="row justify-content-center">
-                <div class="col-lg-6 col-sm-4">
-                  <header class="headerForm">
-                    <h1>Buscar nueva fecha:</h1>
-                  </header>
-                  <article class="articleForm">
-                  </article>
-                </div>
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <header class="headerForm d-flex flex-column">
+                  <h1>Buscar nueva fecha:</h1>
+                </header>
+                <article class="articleForm d-flex flex-column">
+                </article>
+              </div>
             </div>
             <div class="row justify-content-center">
               <div class="col-10">
-                <article class="articleNasa d-flex flex-sm-column-reverse flex-lg-row">
-                        <div class='text-container'>
-                          <h2>${title}</h2>
-                          <h3>${date}</h3>
-                          <p>${explanation}</p>
+                <article class="articleNasa d-flex flex-column">
+                    <header>
+                        <h2>${title}</h2>
+                        <h3>${date}</h3>
+                        <div class='img-flex d-flex justify-content-center'>
+                            <div class="img-contenedor">
+                                <img class="rounded img-fluid" src="${hdurl}"/>
+                            </div>
                         </div>
-                        <div class='img-contenedor d-flex flex-column align-items-sm-center justify-content-lg-center '>
-                          <img class='rounded' src=${hdurl}>
-                        </div>
+                    </header>
+                  <div class="text-container">
+                    <p>
+                      ${explanation}
+                    </p>
+                  </div>
                 </article>
               </div>
             </div>
@@ -50,29 +57,39 @@ export default function sectionNasa () {
         } else {
           const { title, date, url, explanation } = data
           document.querySelector('section').innerHTML = `
-          <div class='container-fluid div-form'>
-              <div class="row justify-content-center">
-                <div class="col-4">
-                  <article class="articleForm">
-                  </article>
-                </div>
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <header class="headerForm d-flex flex-column">
+                  <h1>Buscar nueva fecha:</h1>
+                </header>
+                <article class="articleForm d-flex flex-column">
+                </article>
+              </div>
             </div>
             <div class="row justify-content-center">
               <div class="col-10">
-                <article class="articleNasa">
-                        <div class='text-container'>
-                          <h2>${title}</h2>
-                          <h3>${date}</h3>
-                          <p>${explanation}</p>
+                <article class="articleNasa d-flex flex-column">
+                    <header>
+                        <h2>${title}</h2>
+                        <h3>${date}</h3>
+                        <div class='img-flex d-flex justify-content-center'>
+                            <div class="iframe-container">
+                                <iframe msrc="${url}"/>
+                            </div>
                         </div>
-                        <div class='iframe-container d-flex flex-column justify-content-center '>
-                          <iframe class='' src=${url}>
-                        </div>
+                    </header>
+                  <div class="text-container">
+                    <p>
+                      ${explanation}
+                    </p>
+                  </div>
                 </article>
               </div>
             </div>
           </div>
           `
+
           inputFecha(date)
         }
       })
@@ -86,8 +103,13 @@ export default function sectionNasa () {
     document.querySelector('section.section-form').innerHTML = `
     <div class='container-fluid'>
       <div class="row justify-content-center">
-        <div class="col-4">
-          <article class="articleForm">
+        <div class="col-6">
+          <header class="headerHome">
+            <h1>Hola, bienvenide.</h1>
+            <p>Estoy en busqueda de las fotos mas bonitas que sube la Nasa a diario.</p>
+            <p>Asi que si te interesa en ayudarme a buscar las fotos mas bonitas de todas, avisame y enviamelas por correo :D</p>
+          </header>
+          <article class="articleForm articleHome d-flex justify-content-center">
           </article>
         </div>
       </div>

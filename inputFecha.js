@@ -1,19 +1,25 @@
 export default function inputFecha (date = null) {
   document.querySelector('article.articleForm').innerHTML = `
-        <form class="row ${date ? 'align-items-center' : 'justify-content-center'}">
-          <label for="input-date" id='label-date' class='d-block' >
-          <input
-            class="form-control aa" 
-            id="input-date" 
-            type="date"
-            name="date"
-            min="1996-06-16" 
-            max=""
-            required
-            />    
-          </label>
-          <button type="submit" id="submit-input" class="btn btn-outline-light">Buscar</button>
-      </form>
+                 <form class="d-flex flex-row justify-content-center">
+                    <label for="input-date" id="label-date" class="d-block">
+                      <input
+                        class="form-control aa"
+                        id="input-date"
+                        type="date"
+                        name="date"
+                        min="1996-06-16"
+                        max="2024-06-14"
+                        required=""
+                      />
+                    </label>
+                    <button
+                      type="submit"
+                      id="submit-input"
+                      class="btn btn-outline-light"
+                    >
+                      Buscar
+                    </button>
+                  </form>
       `
 
   actualizarFechaMax()
