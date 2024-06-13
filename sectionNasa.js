@@ -23,7 +23,7 @@ export default function sectionNasa () {
           document.querySelector('section').innerHTML = `
           <div class="container-fluid">
             <div class="row justify-content-center">
-              <div class="col-10">
+              <div class="col-6">
                 <header class="headerForm d-flex flex-column">
                   <h1>Buscar nueva fecha:</h1>
                 </header>
@@ -73,17 +73,17 @@ export default function sectionNasa () {
                     <header>
                         <h2>${title}</h2>
                         <h3>${date}</h3>
-                        <div class='img-flex d-flex justify-content-center'>
-                            <div class="iframe-container">
-                                <iframe msrc="${url}"/>
-                            </div>
-                        </div>
                     </header>
-                  <div class="text-container">
-                    <p>
-                      ${explanation}
-                    </p>
-                  </div>
+                    <div class="text-container">
+                      <p>
+                        ${explanation}
+                      </p>
+                    </div>
+                    <div class='img-flex d-flex justify-content-center'>
+                      <div class="iframe-container">
+                        <iframe src="${url}"/>
+                      </div>
+                    </div>
                 </article>
               </div>
             </div>
@@ -103,13 +103,19 @@ export default function sectionNasa () {
     document.querySelector('section.section-form').innerHTML = `
     <div class='container-fluid'>
       <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-10">
           <header class="headerHome">
             <h1>Hola, bienvenide.</h1>
             <p>Estoy en busqueda de las fotos mas bonitas que sube la Nasa a diario.</p>
             <p>Asi que si te interesa en ayudarme a buscar las fotos mas bonitas de todas, avisame y enviamelas por correo :D</p>
           </header>
-          <article class="articleForm articleHome d-flex justify-content-center">
+          <article class="articleForm d-flex justify-content-center">
+          </article>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <article class="articleForm d-flex justify-content-center">
           </article>
         </div>
       </div>

@@ -83,55 +83,58 @@ article.articleNasa {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   width: 100%;
-  height: 600px;
+  /*Cambiamos este heigth, antes era 600px 13/6 17.11*/
+  height: 100%;
 }
 
 article.articleNasa div.text-container {
+  padding: 10px;
   width: 100%;
   height: 60%;
   overflow: auto;
+}
+
+article.articleNasa div.img-flex{
+  border-radius: 2px;
+  background-color: #0000008a;
+}
+
+header.headerForm h1{
+  text-align: center;
+}
+
+label#label-date{
+  width:100%
 }
 
 article.articleNasa div.img-contenedor,
 article.articleNasa div.iframe-container {
   margin: 0;
   border-radius: 2px;
-  background-color: #36363648;
-  width: 400px;
-  height: 100%;
-  min-width: 1px;
+  background-color: #d14c4c48;
+  width: 300px;
+  max-width: 200px;
+  height: 100%;  
+}
+
+article.articleNasa div.iframe-container{
+  height: 50vw;
 }
 
  article.articleNasa iframe {
-  max-width: 100%;
+  width: 100%;
   height: 100%;
 }
 
 
-header.headerForm h1 {
-  text-align: center;
-}
-
 input#input-date {
+  margin-bottom: 5px;
   width: 100%;
   background-color: #00000000;
   color: aliceblue;
   border: 2px solid aliceblue;
 }
 
-
-input#input-date:invalid {
-  background-color: #000000e5;
-  border: 2px solid rgb(185, 24, 37);
-  box-shadow: 0 0 14px rgb(185, 24, 37);
-}
-
-
-input#input-date:invalid {
-  background-color: #000000e5;
-  border: 2px solid rgb(185, 24, 37);
-  box-shadow: 0 0 14px rgb(185, 24, 37);
-}
 /* input#input-date:hover,
 input#input-date:hover:invalid, */
 input#input-date:hover {
@@ -146,7 +149,8 @@ input#input-date:focus {
 }
 
 .articleForm button#submit-input {
-  width: 20%;
+  margin-bottom: 5px;
+  width: 100%;
   border: 2px solid aliceblue;
 }
 
@@ -155,8 +159,9 @@ input#input-date:focus {
 .headerHome h1{
   width: 100%;
   text-align: center;
-  letter-spacing: .5em;
-  font-size: 3em !important;
+  letter-spacing: .2em;
+  font-size: 6vw !important;
+  word-wrap: break-word;
   color: #0b8a8f;
   text-shadow: 0 0 14px #0b8a8f;
 }

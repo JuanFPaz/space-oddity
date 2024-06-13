@@ -11,7 +11,7 @@ document.querySelector('#app').innerHTML = `
      </h1>
     </header>
   <main class="main">
-    <section class="background-img section-form d-flex flex-column justify-content-center">
+    <section class="background-img section-form d-flex flex-column justify-content-start">
     </section>
   </main>
   <footer>

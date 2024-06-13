@@ -1,6 +1,6 @@
 export default function inputFecha (date = null) {
   document.querySelector('article.articleForm').innerHTML = `
-                 <form class="d-flex flex-row justify-content-center">
+                 <form class="d-flex flex-row flex-wrap justify-content-center">
                     <label for="input-date" id="label-date" class="d-block">
                       <input
                         class="form-control aa"
