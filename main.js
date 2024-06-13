@@ -3,11 +3,15 @@ import sectionNasa from './sectionNasa'
 import './style.css'
 
 document.querySelector('#app').innerHTML = `
-  <main class="main">
-    <header class="fixed-top">           
-     <h1>cassini.jpaz.ar</h1>
+    <header class="fixed-top header-app">           
+     <h1>
+      <a href='https://spaceoditty.jpaz.ar'>
+           spaceoddity.jpaz.ar
+      </a>
+     </h1>
     </header>
-    <section class='background-img section-form d-flex align-items-center'>
+  <main class="main">
+    <section class='background-img section-form d-flex flex-sm-column justify-content-sm-around flex-lg-row align-items-lg-center'>
     </section>
   </main>
   <footer>
