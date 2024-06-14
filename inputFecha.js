@@ -7,7 +7,7 @@ export default function inputFecha (date = null) {
                         id="input-date"
                         type="date"
                         name="date"
-                        min="1996-06-16"
+                        min="1995-06-16"
                         max="2024-06-14"
                         required=""
                       />

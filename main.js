@@ -5,18 +5,19 @@ import './style.css'
 document.querySelector('#app').innerHTML = `
     <header class="fixed-top header-app d-flex align-items-center justify-content-center">           
      <h1>
-      <a href='https://spaceoddity.jpaz.ar/'>
+      <a href='/'>
         spaceoddity.jpaz.ar
       </a>
      </h1>
     </header>
-  <main class="main">
-    <section class="background-img section-form d-flex flex-column justify-content-start">
+  <main class="main-app background-img d-flex flex-column justify-content-center">
+    <section class="section-form">
     </section>
   </main>
-  <footer>
+  <footer >
     2024
   </footer>
+
 `
 
 sectionNasa()

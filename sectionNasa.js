@@ -14,7 +14,18 @@ export default function sectionNasa () {
       .then((res) => res.json())
       .then((data) => {
         if (data.code === 400) {
-          throw Error(data.msg)
+          console.log(data)
+          const { code, msg } = data
+          const err = new Error(msg)
+          err.code = code
+          throw err
+        }
+        if (data.code === 404) {
+          console.log(data)
+          const { code, msg } = data
+          const err = new Error(msg)
+          err.code = code
+          throw err
         }
 
         if (data.media_type !== 'video') {
@@ -32,8 +43,8 @@ export default function sectionNasa () {
               </div>
             </div>
             <div class="row justify-content-center">
-              <div class="col-10">
-                <article class="articleNasa d-flex flex-column">
+              <div class="col-10 col-lg-12">
+                <article class="articleNasa d-flex flex-column flex-lg-row-reverse flex-align-items-lg-end">
                     <header>
                         <h2>${title}</h2>
                         <h3>${date}</h3>
@@ -59,7 +70,7 @@ export default function sectionNasa () {
           document.querySelector('section').innerHTML = `
           <div class="container-fluid">
             <div class="row justify-content-center">
-              <div class="col-10">
+              <div class="col-10 col-lg-12">
                 <header class="headerForm d-flex flex-column">
                   <h1>Buscar nueva fecha:</h1>
                 </header>
@@ -68,8 +79,8 @@ export default function sectionNasa () {
               </div>
             </div>
             <div class="row justify-content-center">
-              <div class="col-10">
-                <article class="articleNasa d-flex flex-column">
+              <div class="col-10 col-lg-12">
+                <article class="articleNasa d-flex flex-column d-flex flex-column flex-lg-row-reverse flex-align-items-lg-end">
                     <header>
                         <h2>${title}</h2>
                         <h3>${date}</h3>
@@ -80,7 +91,7 @@ export default function sectionNasa () {
                       </p>
                     </div>
                     <div class='img-flex d-flex justify-content-center'>
-                      <div class="iframe-container">
+                      <div class="ratio ratio-16x9">
                         <iframe src="${url}"/>
                       </div>
                     </div>
@@ -94,28 +105,45 @@ export default function sectionNasa () {
         }
       })
       .catch((err) => {
-        console.log(err)
+        const { code, message } = err
         document.querySelector('section').innerHTML = `
-        <h1>Error: ${err.message}</h1>
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-6">
+                <header class="headerForm d-flex flex-column">
+                  <h1>Buscar nueva fecha:</h1>
+                </header>
+                <article class="articleForm d-flex flex-column">
+                </article>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-10">
+                <article class="articleNasa articleError d-flex flex-column">
+                    <div class='text-container'>
+                        <p>Ground control to Major Tom</p>
+                        <p>Your request's dead, there's something wrong</p>
+                        <p>Error: ${code} - ${message}</p>
+                        <p></p>
+                    </div>
+                </article>
+              </div>
+            </div>
+          </div>
     `
+        inputFecha()
       })
   } else {
     document.querySelector('section.section-form').innerHTML = `
     <div class='container-fluid'>
       <div class="row justify-content-center">
         <div class="col-10">
-          <header class="headerHome">
+          <article class="articleHome">
             <h1>Hola, bienvenide.</h1>
             <p>Estoy en busqueda de las fotos mas bonitas que sube la Nasa a diario.</p>
             <p>Asi que si te interesa en ayudarme a buscar las fotos mas bonitas de todas, avisame y enviamelas por correo :D</p>
-          </header>
-          <article class="articleForm d-flex justify-content-center">
           </article>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-6">
-          <article class="articleForm d-flex justify-content-center">
+          <article class="articleForm articleBottomRadius d-flex justify-content-center">
           </article>
         </div>
       </div>
