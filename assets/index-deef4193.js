@@ -22,7 +22,7 @@
                       id="submit-input"
                       class="btn btn-outline-light"
                     >
-                      Buscar
+                      Search
                     </button>
                   </form>
       `,m(),f(n)}function d(){const n=new Date,c=String(n.getDate()+1).padStart(2,"0"),t=String(n.getMonth()+1).padStart(2,"0");return`${n.getFullYear()}-${t}-${c}`}function u(n){const c=new Date(n),t=String(c.getDate()+1).padStart(2,"0"),o=String(c.getMonth()+1).padStart(2,"0");return`${c.getFullYear()}-${o}-${t}`}function m(){const n=document.getElementById("input-date");n.max=d()}function f(n){const c=document.getElementById("input-date");n&&(c.value=u(n))}const p="9d3ii44W8GRaQvkghYy3Om9cRI7Chb3ZQM8jx1d0";async function v(n){let c;try{const t=await fetch(`https://api.nasa.gov/planetary/apod?date=${n}&api_key=${p}`);if(console.log(t),!t.ok){const{status:o}=t,e=new Error("Ocurrio un error obteniendo los datos de la API Nasa");throw e.code=o,e}c=await t.json()}catch(t){const{code:o,message:e}=t;document.querySelector("main").innerHTML=`
@@ -44,7 +44,7 @@
             <div class="col-12 col-md-10">
                 <section class="sectionApod">
                     <div class='formHeader  d-flex flex-column align-items-center justify-content-center'>
-                      <h1>Buscar nueva fecha:</h1>
+                      <h1>Please select a date:</h1>
                       <div class="formContainer col-8 col-lg-4">
                       </div>
                     </div>
@@ -70,7 +70,7 @@
             <div class="col-12 col-md-10">
                 <section class="sectionApod ">
                     <div class='formHeader  d-flex flex-column align-items-center justify-content-center'>
-                      <h1>Buscar nueva fecha:</h1>
+                      <h1>Please select a date:</h1>
                       <div class="formContainer col-8 col-lg-4">
                       </div>
                     </div>
@@ -112,9 +112,9 @@
         <div class="col-12 col-md-10 col-lg-8">
             <section class="sectionHome d-flex flex-column align-items-center justify-content-center">
                 <div class="bienvenidaContainer col-12">
-                    <h1>Hola, bienvenide.</h1>
-                    <p>Estoy en busqueda de las fotos mas bonitas que sube la Nasa a diario.</p>
-                    <p>Asi que si te interesa en ayudarme a buscar las fotos mas bonitas de todas, avisame y enviamelas por correo :D</p>
+                    <h1>Welcome Abord!</h1>
+                    <p>I am on a quest to find the most beautiful photos provided daily by NASA. Enter a date in the input field below.</p>
+                    <p>So, put your helmet on... Commencing  countdown... Engines on... Checks ignition... and may God's love be with you.</p>
                 </div>
                 <div class="formContainer col-6">
                 </div>
