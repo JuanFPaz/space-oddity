@@ -44,7 +44,7 @@ async function createSectionAPOD (date) {
             <div class="col-12 col-md-10">
                 <section class="sectionApod">
                     <div class='formHeader  d-flex flex-column align-items-center justify-content-center'>
-                      <h1>Buscar nueva fecha:</h1>
+                      <h1>Please select a date:</h1>
                       <div class="formContainer col-8 col-lg-4">
                       </div>
                     </div>
@@ -74,7 +74,7 @@ async function createSectionAPOD (date) {
             <div class="col-12 col-md-10">
                 <section class="sectionApod ">
                     <div class='formHeader  d-flex flex-column align-items-center justify-content-center'>
-                      <h1>Buscar nueva fecha:</h1>
+                      <h1>Please select a date:</h1>
                       <div class="formContainer col-8 col-lg-4">
                       </div>
                     </div>

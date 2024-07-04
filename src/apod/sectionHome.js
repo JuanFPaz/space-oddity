@@ -6,9 +6,9 @@ function createSectionHome () {
         <div class="col-12 col-md-10 col-lg-8">
             <section class="sectionHome d-flex flex-column align-items-center justify-content-center">
                 <div class="bienvenidaContainer col-12">
-                    <h1>Hola, bienvenide.</h1>
-                    <p>Estoy en busqueda de las fotos mas bonitas que sube la Nasa a diario.</p>
-                    <p>Asi que si te interesa en ayudarme a buscar las fotos mas bonitas de todas, avisame y enviamelas por correo :D</p>
+                    <h1>Welcome Abord!</h1>
+                    <p>I am on a quest to find the most beautiful photos provided daily by NASA. Enter a date in the input field below.</p>
+                    <p>So, put your helmet on... Commencing  countdown... Engines on... Checks ignition... and may God's love be with you.</p>
                 </div>
                 <div class="formContainer col-6">
                 </div>

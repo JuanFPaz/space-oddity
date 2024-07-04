@@ -17,7 +17,7 @@ export default function inputFecha (date = null) {
                       id="submit-input"
                       class="btn btn-outline-light"
                     >
-                      Buscar
+                      Search
                     </button>
                   </form>
       `
