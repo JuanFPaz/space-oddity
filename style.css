@@ -1,32 +1,30 @@
-:root {
-  font-size: 8px !important;
+html {
+  font-size: 16px !important;
   color-scheme: light dark;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  background-color: #000000;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-  background-color: #000000;
-  margin: 0;
   text-align: center;
 }
 
-h1 {
-  text-align: justify;
-    line-height: 1.5;
-    font-size: 2.5em;
+#app {
+  height: 100vh;
+  background-image: url("./background/bk.jfif");
+  background-position: center center; /* Centra la imagen */
+  background-size: cover; /* Ajusta el tamaño de la imagen al 50% del contenedor */
+  color: white;
 }
 
-p {
-  text-align: left;
-  font-size: 2em !important;
-  line-height: 1.1;
-  letter-spacing: .01em;    
+header.header-app {
+  background-color: #000000e3;
+  letter-spacing: 0.8em;
+  font-size: 1.5vw;
 }
 
 a {
@@ -36,87 +34,29 @@ a {
   transition: text-shadow 0.5s ease-in-out;
 }
 
-input, button{
-  font-size: 2em !important;
-}
+
 
 a:hover {
   text-shadow: 0 0 14px aliceblue;
 }
 
-/*ESTILOS DE LA APLICACION:*/
-
-div.app {
-  width: 100%;
-  background-color: #000000;
+main {
+  height: 100%;
 }
 
-
-header.header-app {
-  background-color: #000000e3;
+main:has(section.sectionApod){
+  margin-top: 60px;
+  height: auto;
 }
 
-header.header-app{
-  letter-spacing: .8em;
-  font-size: 1.5vw
-}
-
-
-main.background-img {
-  background-image: url("https://raw.githubusercontent.com/JuanFPaz/api-nasa/main/public/la2damejor.jfif");
-  background-position: center center; /* Centra la imagen */
-  background-size: cover; /* Ajusta el tamaño de la imagen al 50% del contenedor */
-  padding-top: 7vw;
-}
-
-main.main-app:has(.articleHome){
-  height: 100vh;
-}
-
-footer{
-  color: aliceblue;
-  text-shadow: 0 0 14px aliceblue;
-}
-
-section.section-form {
-  color: aliceblue;
-  text-shadow: 0 0 14px aliceblue;
-}
-
-article.articleNasa {
+.sectionHome,
+.sectionApod,
+.sectionError {
+  box-shadow: 0px 0px 10px 0px white;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  width: 100%;
-}
-
-article.articleNasa div.text-container {
   padding: 10px;
 }
-
-article.articleNasa div.img-flex{
-  border-radius: 2px;
-  background-color: #0000008a;
-}
-
-header.headerForm h1{
-  text-align: center;
-}
-
-label#label-date{
-  width:100%
-}
-
-article.articleNasa div.img-contenedor {
-  margin: 0 auto;
-  border-radius: 2px;
-  width: 600px;
-}
-
- article.articleNasa iframe {
-  /* width: 100%;
-  height: 50vw; */
-}
-
 
 input#input-date {
   margin-bottom: 5px;
@@ -126,8 +66,6 @@ input#input-date {
   border: 2px solid aliceblue;
 }
 
-/* input#input-date:hover,
-input#input-date:hover:invalid, */
 input#input-date:hover {
   border: 2px solid rgb(255, 255, 255);
   box-shadow: 0 0 14px aliceblue;
@@ -139,83 +77,14 @@ input#input-date:focus {
   box-shadow: 0 0 14px rgb(24, 185, 123);
 }
 
-.articleForm button#submit-input {
-  margin-bottom: 5px;
-  width: 100%;
-  border: 2px solid aliceblue;
-}
-
-
-.articleHome {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  width: 100%;
-  padding: 10px;
-}
-
-.articleBottomRadius{
-  background-color: rgba(0, 0, 0, 0.5);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  width: 100%;
-  padding: 10px;
-}
-
-.articleHome h1{
-  width: 100%;
-  text-align: center;
-  letter-spacing: .2em;
-  font-size: 6vw;
-  word-wrap: break-word;
-  color: #0b8a8f;
-  text-shadow: 0 0 14px #0b8a8f;
-}
-
-.articleHome p{
-  text-align: center;
-  letter-spacing: .5em;
-  text-shadow: 0 0 14px aliceblue;
-}
-
-.articleHome button#submit-input {
-  width: 100%;
-}
-
-
-.articleForm button#submit-input:hover,
-.articleHome button#submit-input:hover {
+button#submit-input:hover,
+button#submit-input:hover {
   box-shadow: 0 0 14px aliceblue;
 }
 
-
-@media (min-width:768px) {
-  :root{
-    font-size: 10px !important;
-  }
-  header.header-app h1 {
-    letter-spacing: .3em;
-    font-size: 30px
-  }
-
-  main.main-app{
-    padding-top: 50px;
-    height: 100vh;
-  }
-}
-
 @media (min-width:992px) {
-  :root{
-    font-size: 11px !important;
-  }
-
-  div.text-container{
-    height: max-content;
-  }
-}
-
-@media (min-width:1200px) {
-  :root{
-    font-size: 12px !important;
+  .sectionApod p{
+    text-align: start;
+    font-size: 1.5em;
   }
 }
