@@ -1,9 +1,9 @@
 export default function inputFecha (date = null) {
-  document.querySelector('article.articleForm').innerHTML = `
-                 <form class="d-flex flex-row flex-wrap justify-content-center">
+  document.querySelector('.formContainer').innerHTML = `
+                 <form class="d-flex flex-column">
                     <label for="input-date" id="label-date" class="d-block">
                       <input
-                        class="form-control aa"
+                        class="form-control"
                         id="input-date"
                         type="date"
                         name="date"
